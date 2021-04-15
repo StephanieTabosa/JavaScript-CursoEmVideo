@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudando JavaScript</title>
+    <style>
+        body{
+            background-color: rgba(137, 43, 226, 0.685);
+            font-size: 16pt;
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <script>
+        var nome = window.prompt('Digite seu nome');
+        var numero = Number(window.prompt('Digite um número'));
+        var salario = Number(window.prompt('Digite a pretensão salarial'));
+        document.writeln(`Olá, <strong>${nome}</strong>! Seu nome tem ${nome.length} letras <br>`);
+        document.write(`Seu nome em maiúsculas fica ${nome.toUpperCase()}<br>`);
+        document.write(`Seu nome em minúsculas fica ${nome.toLowerCase()}<br>`);
+
+        document.write(`O número que você digitou foi ${numero.toFixed(2).replace('.', ',')}<br>`);
+        
+        document.write(`Sua pretensão salarial em REAIS é de ${salario.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}<br>`);
+        document.write(`Sua pretensão salarial em EUROS é de ${salario.toLocaleString('pt-BR', {style: 'currency', currency: 'EUR'})}<br>`);
+        document.write(`Sua pretensão salarial em DÓLAR é de ${salario.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})}`);
+
+    </script>
+</body>
+</html>

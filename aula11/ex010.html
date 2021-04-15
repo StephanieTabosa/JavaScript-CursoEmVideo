@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Multas</title>
+    <style>
+        body{
+            background: darkslategrey;
+            color: whitesmoke;
+        }
+        input#txtvel{
+            width: 70px;
+        }
+        input.botao{
+            background: springgreen;
+            color: #373d42;
+            border-radius: 5px;
+            border: none;
+            border-style: groove;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sistema de Multas</h1>
+    <span>Informe a velocidade </span><input type="number" name="txtvel" id="txtvel">
+    <input class="botao" type="button" value="Verificar" onclick="calcular()">
+    <div id="txtreturnvel"></div>
+
+    <script>
+        function calcular(){
+            var velocidade = document.querySelector('input#txtvel')
+            var velocidadeNum = Number(velocidade.value)
+            txtreturnvel.innerHTML = `<p>Sua velocidade atual é de <strong>${velocidadeNum}Km/h</strong></p>`
+            
+            if(velocidadeNum > 60){
+                txtreturnvel.innerHTML = '<p>Você ultrapassou o limite de velocidade. <strong>MULTADO</strong>!</p>'
+            }else{
+                txtreturnvel.innerHTML += '<p>Você está no limite correto da velocidade.</p>'
+            }
+            txtreturnvel.innerHTML += `<p>Dirija <strong>sempre</strong> com o cinto de segurança!</p>`
+        }
+        
+    </script>
+</body>
+</html>

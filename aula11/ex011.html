@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>você é Brasileiro(a) ou Estrangeiro(a)?</title>
+    <style>
+        body{
+            background-color: #292626;
+            color: azure;
+        }
+        input#txtpais{
+            width: 150px;
+        }
+        input.botao{
+            background: gray;
+            border-radius: 5px;
+            border-color: whitesmoke;
+        }
+        div#paisVerificado{
+            color: greenyellow;
+            background-color: dimgray;
+            width: 500px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Você é brasileiro ou estrangeiro?</h1>
+    <span>Informe seu país de nascimento: </span>
+    <input type="text" name="txtpais" id="txtpais">
+    <input class="botao" type="button" value="Enviar" onclick="verificar()">
+    <div id="paisVerificado"></div>
+    <!--<div>Entre em contato clicando <a href="callto:083987265038">aqui</a></div>-->
+
+
+    <script>
+        function verificar(){
+            var pais = document.querySelector('input#txtpais')
+            var paisValor = pais.value
+
+
+            paisVerificado.innerText = `Você é do país ${paisValor}.`
+            
+            if (paisValor == 'Brasil'){
+                paisVerificado.innerHTML = `<p>Você é do(a) <strong>${paisValor}</strong>, portanto é Brasileiro(a)!</p>`
+            }else{
+                paisVerificado.innerHTML = `<p>Você é do(a) <strong>${paisValor}</strong>, portanto é Estrangeiro(a)!</p>`
+            }
+        }
+
+    </script>
+</body>
+</html>
